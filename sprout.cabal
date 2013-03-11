@@ -1,0 +1,35 @@
+name: sprout
+version: 0.0.1
+
+category: Language
+
+synopsis: A toy DSL
+
+description: at the moment, just a toy DSL based on Tom Hawkins's Atom
+
+author: Pat Hickey <pat@galois.com>
+
+license: BSD3
+
+build-type: Simple
+cabal-version: >= 1.6
+
+library
+        build-depends:
+                base    >= 4.0 && < 5,
+                syb,
+                containers,
+                mtl,
+                bimap
+
+        exposed-modules:
+                Language.Sprout,
+                Language.Sprout.Expressions,
+                Language.Sprout.Machine
+
+        extensions: GADTs, DeriveDataTypeable
+
+        ghc-options: -Wall
+
+
+
