@@ -20,17 +20,20 @@ library
                 syb,
                 containers,
                 mtl,
-                vector
+                vector,
+                QuickCheck
 
         exposed-modules:
                 Language.Sprout,
                 Language.Sprout.Expressions,
+
+                Language.Sprout.Machine,
                 Language.Sprout.Machine.Instructions,
                 Language.Sprout.Machine.Compile,
                 Language.Sprout.Machine.Simulate,
 
-                Language.Sprout.Test.Simple
-
+                Language.Sprout.Test.Simple,
+                Language.Sprout.Test.QuickCheck
 
         extensions: GADTs, DeriveDataTypeable
 

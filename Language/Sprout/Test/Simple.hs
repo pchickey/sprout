@@ -29,6 +29,12 @@ test5 = And (ConstE False) (Not (Not (ConstE True)))
 test6 :: E Bool
 test6 = And (ConstE True) (Not (Not (ConstE False)))
 
+test7 :: E Int32
+test7 = Sub (ConstE 1) (ConstE 2)
+
+test8 :: E Word32
+test8 = Sub (ConstE 1) (ConstE 2)
+
 doTest :: (Expr a) => E a -> IO()
 doTest expr = do
   let (u, i, s) = runTest expr
