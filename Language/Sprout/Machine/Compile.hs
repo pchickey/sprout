@@ -1,39 +1,21 @@
 
-module Language.Sprout.Machine where
+module Language.Sprout.Machine.Compile where
 
-import Data.Word
+
+import Language.Sprout.Expressions
+import Language.Sprout.Machine.Instructions
 
 import Control.Monad.State.Strict
 import Control.Monad.Identity
 
-import Language.Sprout.Expressions
+newtype Program = Program { unProgram :: [Instr] }
 
-newtype Mem = Mem { unMem :: Word32 }
+type Compiler a = StateT Mem Identity a
 
 memZero :: Mem
 memZero = Mem 0
 nextMem :: Mem -> Mem
 nextMem (Mem n) = Mem (n+1)
-
-type Oper = Mem
-type Dest = Mem
-
-data Instr
-  = IExtern String Dest
-  | IConst  Const  Dest
-  | IAdd Dest Oper Oper
-  | ISub Dest Oper Oper
-  | IMul Dest Oper Oper
-  | IDiv Dest Oper Oper
-  | IAnd Dest Oper Oper
-  | INot Dest Oper
-  | IEq  Dest Oper Oper
-  | ILt  Dest Oper Oper
-  | IMux Dest Oper Oper Oper
-
-newtype Program = Program { unProgram :: [Instr] }
-
-type Compiler a = StateT Mem Identity a
 
 compile :: UE -> Program
 compile e = fst $ runIdentity $ runStateT f memZero
@@ -57,7 +39,6 @@ emit p = return p
 
 emitS :: Instr -> Compiler Program
 emitS = emit . sing
-
 
 -- Create object code
 obj :: Dest -> UE -> Compiler Program

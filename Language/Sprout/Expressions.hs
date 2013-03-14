@@ -39,7 +39,7 @@ data Expression
 -- | Typed expression
 data E a where
   VRef   :: V a -> E a
-  Const  :: a -> E a
+  ConstE :: a -> E a
   -- Numeric expressions:
   Add    :: NumE a => E a -> E a -> E a
   Sub    :: NumE a => E a -> E a -> E a
@@ -110,6 +110,7 @@ data UE
   | UEq    UE UE
   | ULt    UE UE
   | UMux   UE UE UE
+  deriving (Eq, Show)
 
 class TypeOf a where typeOf :: a -> Type
 
@@ -140,7 +141,7 @@ instance TypeOf UE where
 ue :: Expr a => E a -> UE
 ue t = case t of
   VRef  (V v) -> UVRef v
-  Const a     -> UConst $ constant a
+  ConstE a    -> UConst $ constant a
   Add   a b   -> UAdd (ue a) (ue b)
   Sub   a b   -> USub (ue a) (ue b)
   Mul   a b   -> UMul (ue a) (ue b)

@@ -20,12 +20,17 @@ library
                 syb,
                 containers,
                 mtl,
-                bimap
+                vector
 
         exposed-modules:
                 Language.Sprout,
                 Language.Sprout.Expressions,
-                Language.Sprout.Machine
+                Language.Sprout.Machine.Instructions,
+                Language.Sprout.Machine.Compile,
+                Language.Sprout.Machine.Simulate,
+
+                Language.Sprout.Test.Simple
+
 
         extensions: GADTs, DeriveDataTypeable
 
