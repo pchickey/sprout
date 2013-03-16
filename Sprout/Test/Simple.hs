@@ -1,15 +1,15 @@
 
-module Language.Sprout.Test.Simple where
+module Sprout.Test.Simple where
 
 import Data.Int
 import Data.Word
 
 import qualified Data.Vector as V
 
-import Language.Sprout.Expressions
-import Language.Sprout.Machine.Instructions
-import Language.Sprout.Machine.Compile
-import Language.Sprout.Machine.Simulate
+import Sprout.Expressions
+import Sprout.Machine.Instructions
+import Sprout.Machine.Compile
+import Sprout.Machine.Simulate
 
 test1 :: E Int32
 test1 = Add (ConstE 1) (ConstE 2)

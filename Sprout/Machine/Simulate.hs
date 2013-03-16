@@ -1,5 +1,5 @@
 
-module Language.Sprout.Machine.Simulate 
+module Sprout.Machine.Simulate 
   ( MachineState
   , emptyMachineState
   , step
@@ -11,8 +11,8 @@ import Prelude hiding (read)
 import Data.Word
 import qualified Data.Vector as V
 import Data.Vector (Vector, (//), (!))
-import Language.Sprout.Machine.Instructions
-import Language.Sprout.Expressions (Const(..))
+import Sprout.Machine.Instructions
+import Sprout.Expressions (Const(..))
 
 type MachineState = Vector Word32
 

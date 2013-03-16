@@ -3,12 +3,12 @@
 {-# LANGUAGE ExistentialQuantification #-}
 {-# LANGUAGE FlexibleInstances #-}
 
-module Language.Sprout.Test.QuickCheck where
+module Sprout.Test.QuickCheck where
 
 import Data.Word
 import Data.Int
-import Language.Sprout
-import Language.Sprout.Machine
+import Sprout
+import Sprout.Machine
 
 import Test.QuickCheck
 

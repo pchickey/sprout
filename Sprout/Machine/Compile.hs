@@ -1,9 +1,9 @@
 
-module Language.Sprout.Machine.Compile where
+module Sprout.Machine.Compile where
 
 
-import Language.Sprout.Expressions
-import Language.Sprout.Machine.Instructions
+import Sprout.Expressions
+import Sprout.Machine.Instructions
 
 import Control.Monad.State.Strict
 import Control.Monad.Identity

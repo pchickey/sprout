@@ -5,14 +5,14 @@ category: Language
 
 synopsis: A toy DSL
 
-description: at the moment, just a toy DSL based on Tom Hawkins's Atom
+description: todo
 
 author: Pat Hickey <pat@galois.com>
 
 license: BSD3
 
 build-type: Simple
-cabal-version: >= 1.6
+cabal-version: >= 1.10
 
 library
         build-depends:
@@ -24,19 +24,24 @@ library
                 QuickCheck
 
         exposed-modules:
-                Language.Sprout,
-                Language.Sprout.Expressions,
+                Sprout.Language.Area,
+                Sprout.Language.SBool,
+                Sprout.Language.Proxy,
+                Sprout.Language.Ref,
+                Sprout.Language.Type,
+                Sprout.Language.Syntax,
+                Sprout.Language.Syntax.AST,
+                Sprout.Language.Syntax.Type
 
-                Language.Sprout.Machine,
-                Language.Sprout.Machine.Instructions,
-                Language.Sprout.Machine.Compile,
-                Language.Sprout.Machine.Simulate,
+                -- Sprout.Machine,
+                -- Sprout.Machine.Instructions,
+                -- Sprout.Machine.Compile,
+                -- Sprout.Machine.Simulate,
 
-                Language.Sprout.Test.Simple,
-                Language.Sprout.Test.QuickCheck
+                -- Sprout.Test.Simple,
+                -- Sprout.Test.QuickCheck
 
-        extensions: GADTs, DeriveDataTypeable
-
+        default-language: Haskell2010
         ghc-options: -Wall
 
 

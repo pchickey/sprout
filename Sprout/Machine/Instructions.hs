@@ -1,8 +1,8 @@
 
-module Language.Sprout.Machine.Instructions where
+module Sprout.Machine.Instructions where
 
 import Data.Word
-import Language.Sprout.Expressions
+import Sprout.Expressions
 
 newtype Mem = Mem { unMem :: Word32 }
 instance Eq Mem where
