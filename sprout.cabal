@@ -25,7 +25,10 @@ library
 
         exposed-modules:
                 Sprout.Language.Area,
+                Sprout.Language.SChar,
                 Sprout.Language.SBool,
+                Sprout.Language.Sint,
+                Sprout.Language.Uint,
                 Sprout.Language.Proxy,
                 Sprout.Language.Ref,
                 Sprout.Language.Type,

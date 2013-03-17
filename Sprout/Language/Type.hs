@@ -25,3 +25,8 @@ class SproutVar t => SproutExpr t where
 wrapVarExpr :: SproutExpr t => AST.Var -> t
 wrapVarExpr  = wrapExpr . AST.ExpVar
 
+exprBinop :: SproutExpr a => (AST.Expr -> AST.Expr -> AST.Expr) -> (a -> a -> a)
+exprBinop k x y = wrapExpr (k (unwrapExpr x) (unwrapExpr y))
+
+exprUnary :: SproutExpr a => (AST.Expr -> AST.Expr) -> (a -> a)
+exprUnary k x = wrapExpr (k (unwrapExpr x))
